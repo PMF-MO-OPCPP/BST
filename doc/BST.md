@@ -96,8 +96,8 @@ void preorder_recursive(Node * sub_root, void (*f)(int)){
   // sub_root je ili nullptr ili korijen stabla ili korijen podstabla
   if(sub_root != nullptr){
      f(sub_root->data);
-     preorder_recursive(sub_root->left);
-     preorder_recursive(sub_root->right);
+     preorder_recursive(sub_root->left, f);
+     preorder_recursive(sub_root->right, f);
   }
 }
 ```
